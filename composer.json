@@ -1,0 +1,29 @@
+{
+	"name": "turanct/phpdown",
+	"description": "Simple PHP Markdown Parser",
+	"type": "library",
+	"homepage": "http://github.com/turanct/phpdown",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Toon Daelman",
+			"email": "spinnewebber_toon@hotmail.com",
+			"homepage": "http://turanct.wordpress.com",
+			"role": "Developer"
+		}
+	],
+	"require": {
+	},
+	"require-dev": {
+		"phpspec/phpspec": "2.0.*@dev"
+	},
+	"config": {
+		"bin-dir": "bin"
+	},
+	"minimum-stability": "dev",
+	"autoload": {
+		"psr-0": {
+			"Turanct": "src"
+		}
+	}
+}
