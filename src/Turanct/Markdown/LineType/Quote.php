@@ -15,8 +15,8 @@ class Quote implements LineType
         return false;
     }
 
-    public function getBlockElement(Context $context)
+    public function getBlockElement(array $lines)
     {
-        return new \Turanct\Markdown\Element\BlockQuote($context->getLines());
+        return new \Turanct\Markdown\Element\BlockQuote($lines);
     }
 }

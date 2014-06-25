@@ -11,8 +11,8 @@ class Header implements LineType
         return false;
     }
 
-    public function getBlockElement(Context $context)
+    public function getBlockElement(array $lines)
     {
-        return new \Turanct\Markdown\Element\Header($context->getLines());
+        return new \Turanct\Markdown\Element\Header($lines);
     }
 }

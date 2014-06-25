@@ -11,7 +11,7 @@ class DoubleLine implements LineType
         return false;
     }
 
-    public function getBlockElement(Context $context)
+    public function getBlockElement(array $lines)
     {
         throw new RuntimeException('This method should never be called');
     }

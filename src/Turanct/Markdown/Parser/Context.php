@@ -37,6 +37,6 @@ class Context
 
     public function __toString()
     {
-        return (string) $this->type->getBlockElement($this);
+        return (string) $this->type->getBlockElement($this->lines);
     }
 }
