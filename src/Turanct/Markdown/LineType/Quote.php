@@ -10,7 +10,9 @@ class Quote implements LineType
 {
     public function append(LineType $type)
     {
-        if ($type instanceof Quote || $type instanceof Paragraph || $type instanceof EmptyLine) {
+        if ($type instanceof EmptyLine) {
+            return new QuoteEmptyLine();
+        } elseif ($type instanceof Quote || $type instanceof Paragraph) {
             return new Quote();
         }
 
