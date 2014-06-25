@@ -27,6 +27,10 @@ class Line
             return new LineType\Header();
         } elseif (substr($text, 0, 1) == '>') {
             return new LineType\Quote();
+        } elseif (substr($text, 0, 1) == "\t") {
+            return new LineType\Code();
+        } elseif (substr($text, 0, 4) == '    ') {
+            return new LineType\Code();
         } else {
             return new LineType\Paragraph();
         }
