@@ -34,9 +34,23 @@ class Quote implements LineType
 
         $content = trim(implode("\n", $lines));
 
-        $parser = new Parser();
+        $nonEmptyLines = array_filter(
+            $lines,
+            function($line) {
+                if (trim($line) == '') {
+                    return false;
+                }
 
-        return $parser->parse($content);
+                return true;
+            }
+        );
+
+        if (count($nonEmptyLines) > 1) {
+            $parser = new Parser();
+            $content = $parser->parse($content);
+        }
+
+        return $content;
     }
 
     public function getBlockElement($blockContent)
