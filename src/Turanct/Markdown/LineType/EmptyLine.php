@@ -11,7 +11,12 @@ class EmptyLine implements LineType
         return false;
     }
 
-    public function getBlockElement(array $lines)
+    public function getBlockContent(array $lines)
+    {
+        return null;
+    }
+
+    public function getBlockElement($blockContent)
     {
         throw new RuntimeException('This method should never be called');
     }

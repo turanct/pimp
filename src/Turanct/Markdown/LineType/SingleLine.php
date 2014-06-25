@@ -11,8 +11,13 @@ class SingleLine implements LineType
         return false;
     }
 
-    public function getBlockElement(array $lines)
+    public function getBlockContent(array $lines)
     {
-        return new \Turanct\Markdown\Element\HorizontalRule($lines);
+        return null;
+    }
+
+    public function getBlockElement($blockContent)
+    {
+        return new \Turanct\Markdown\Element\HorizontalRule($blockContent);
     }
 }

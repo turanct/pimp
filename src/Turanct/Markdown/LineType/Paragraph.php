@@ -17,8 +17,13 @@ class Paragraph implements LineType
         return false;
     }
 
-    public function getBlockElement(array $lines)
+    public function getBlockContent(array $lines)
     {
-        return new \Turanct\Markdown\Element\Paragraph($lines);
+        return trim(implode("\n", $lines));
+    }
+
+    public function getBlockElement($blockContent)
+    {
+        return new \Turanct\Markdown\Element\Paragraph($blockContent);
     }
 }

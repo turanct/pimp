@@ -4,11 +4,11 @@ namespace Turanct\Markdown\Element;
 
 abstract class BlockElement
 {
-    protected $lines;
+    protected $content;
 
-    public function __construct(array $lines)
+    public function __construct($content)
     {
-        $this->lines = $lines;
+        $this->content = (string) $content;
     }
 
     abstract public function __toString();

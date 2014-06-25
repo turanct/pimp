@@ -4,24 +4,21 @@ namespace Turanct\Markdown\Element;
 
 class Header extends BlockElement
 {
-    public function __toString()
-    {
-        $firstLine = reset($this->lines);
-        $lastLine = end($this->lines);
+    protected $header;
 
-        if (count($this->lines) > 1) {
-            if (substr($lastLine, 0, 1) == '=') {
-                $header = 1;
-            } else {
-                $header = 2;
-            }
-        } else {
-            $header = substr_count($firstLine, '#');
-            $firstLine = str_replace('#', '', $firstLine);
+    public function __construct($content, $header = 1)
+    {
+        parent::__construct($content);
+
+        if ($header > 6) {
+            $header = 6;
         }
 
-        $firstLine = trim($firstLine);
+        $this->header = (int) $header;
+    }
 
-        return '<h' . $header . '>' . $firstLine . '</h' . $header . '>';
+    public function __toString()
+    {
+        return '<h' . $this->header . '>' . $this->content . '</h' . $this->header . '>';
     }
 }

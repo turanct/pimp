@@ -7,5 +7,6 @@ use Turanct\Markdown\Parser\Context;
 interface LineType
 {
     public function append(LineType $type);
-    public function getBlockElement(array $lines);
+    public function getBlockContent(array $lines);
+    public function getBlockElement($blockContent);
 }

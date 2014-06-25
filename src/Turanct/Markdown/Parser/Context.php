@@ -30,13 +30,10 @@ class Context
         }
     }
 
-    public function getLines()
-    {
-        return $this->lines;
-    }
-
     public function __toString()
     {
-        return (string) $this->type->getBlockElement($this->lines);
+        $blockContent = $this->type->getBlockContent($this->lines);
+
+        return (string) $this->type->getBlockElement($blockContent);
     }
 }
