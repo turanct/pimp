@@ -28,6 +28,8 @@ class Context
             $this->type = $newType;
             $this->lines[] = $line;
         }
+
+        return true;
     }
 
     public function __toString()
