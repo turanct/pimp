@@ -33,6 +33,7 @@ class Line
         } elseif (
             substr($text, 0, 2) == '* '
             || substr($text, 0, 2) == '- '
+            || substr($text, 0, 2) == '+ '
         ) {
             return new LineType\StarLine();
         } elseif (preg_match('/^\d+\.\s/', $text)) {

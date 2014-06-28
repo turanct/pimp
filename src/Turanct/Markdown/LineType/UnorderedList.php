@@ -40,6 +40,7 @@ class UnorderedList implements LineType
                 (
                     substr($line, 0, 2) == '* '
                     || substr($line, 0, 2) == '- '
+                    || substr($line, 0, 2) == '+ '
                 )
                 && !empty($currentItem)
             ) {
