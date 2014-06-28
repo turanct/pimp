@@ -30,4 +30,4 @@ don't.
 3. License
 ----------------------------------------
 
-EndlessList is licensed under the *MIT License*
+Pimp is licensed under the *MIT License*
