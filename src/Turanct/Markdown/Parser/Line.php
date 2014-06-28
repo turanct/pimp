@@ -35,6 +35,8 @@ class Line
             || substr($text, 0, 2) == '- '
         ) {
             return new LineType\StarLine();
+        } elseif (preg_match('/^\d+\.\s/', $text)) {
+            return new LineType\NumberLine();
         } elseif (
             substr($text, 0, 1) == "\t"
             || substr($text, 0, 4) == '    '
