@@ -19,17 +19,26 @@ class Line
     {
         if (trim($text) == '') {
             return new LineType\EmptyLine();
-        } elseif (substr($text, 0, 2) == '--') {
+        } elseif (
+            trim($text, '- ') == ''
+            || trim($text, '* ') == ''
+        ) {
             return new LineType\SingleLine();
-        } elseif (substr($text, 0, 2) == '==') {
+        } elseif (trim($text, '=') == '') {
             return new LineType\DoubleLine();
         } elseif (substr($text, 0, 1) == '#') {
             return new LineType\Header();
-        } elseif (substr($text, 0, 1) == '>') {
+        } elseif (substr(ltrim($text), 0, 1) == '>') {
             return new LineType\Quote();
-        } elseif (substr($text, 0, 1) == "\t") {
-            return new LineType\Code();
-        } elseif (substr($text, 0, 4) == '    ') {
+        } elseif (
+            substr($text, 0, 2) == '* '
+            || substr($text, 0, 2) == '- '
+        ) {
+            return new LineType\StarLine();
+        } elseif (
+            substr($text, 0, 1) == "\t"
+            || substr($text, 0, 4) == '    '
+        ) {
             return new LineType\Code();
         } else {
             return new LineType\Paragraph();

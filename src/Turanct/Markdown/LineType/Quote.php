@@ -23,8 +23,8 @@ class Quote implements LineType
     {
         $lines = array_map(
             function(Line $line) {
-                if (substr($line, 0, 1) == '>') {
-                    $line = trim(substr($line, 1));
+                if (substr(ltrim($line), 0, 1) == '>') {
+                    $line = ltrim(substr(ltrim($line), 1));
                 }
 
                 return $line;
