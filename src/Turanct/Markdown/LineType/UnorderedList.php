@@ -63,7 +63,7 @@ class UnorderedList implements LineType
                 $content = ltrim($listItem[0]);
             }
 
-            $listItems[$key] = '<li>' . $content . '</li>';
+            $listItems[$key] = new \Turanct\Markdown\Element\ListItem($content);
         }
 
         return trim(implode("\n", $listItems));
