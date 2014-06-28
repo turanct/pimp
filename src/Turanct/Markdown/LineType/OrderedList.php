@@ -52,7 +52,7 @@ class OrderedList implements LineType
         $parser = new Parser();
 
         foreach ($listItems as $key => $listItem) {
-            $listItem[0] = substr($listItem[0], 1);
+            $listItem[0] = preg_replace('/^\d+\.\s/', '', $listItem[0]);
 
             if (count(array_filter($listItem, function($item){return (string) $item != '';})) > 1) {
                 $content = $parser->parse(trim(implode("\n", $listItem)));
