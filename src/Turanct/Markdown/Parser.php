@@ -7,7 +7,7 @@ class Parser
     public function parse($markdown)
     {
         $contexts = array();
-        $context = new Parser\Context();
+        $context = new Parser\BlockContext();
 
         $lines = explode("\n", $markdown);
 
@@ -17,7 +17,7 @@ class Parser
             if ($context->addLine($line) === false) {
                 $contexts[] = $context;
 
-                $context = new Parser\Context();
+                $context = new Parser\BlockContext();
                 $context->addLine($line);
             }
         }

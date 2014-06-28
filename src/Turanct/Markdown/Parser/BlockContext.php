@@ -4,7 +4,7 @@ namespace Turanct\Markdown\Parser;
 
 use Turanct\Markdown\LineType;
 
-class Context
+class BlockContext
 {
     protected $lines = array();
     protected $type;
